@@ -1,0 +1,217 @@
+/* Import Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Warna latar belakang netral */
+}
+
+/* === Login & Register Page Specific Styles === */
+.login-page-body {
+    background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
+}
+
+/* === Password Toggle Icon (Unified & Fixed) === */
+/* Aturan ini sekarang akan berlaku untuk SEMUA ikon mata,
+   baik di form floating maupun form biasa, dan akan menempatkannya
+   tepat di tengah secara vertikal. */
+.toggle-password-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3; /* Lebih tinggi dari z-index label floating */
+    color: #6c757d;
+}
+
+
+/* === General Layout Styles === */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+.sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    background: #212529;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.sidebar.toggled {
+    margin-left: -260px;
+}
+
+.sidebar .sidebar-header {
+    padding: 1.25rem;
+    background: #343a40;
+}
+
+.sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+.sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    display: block;
+    color: rgba(255,255,255,0.8);
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #fff;
+    background: #343a40;
+}
+
+.sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #0d6efd;
+}
+.sidebar ul li a .bi {
+    margin-right: 10px;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* === Top Navbar === */
+.top-navbar {
+    padding: 0.75rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.top-navbar .nav-link.dropdown-toggle {
+    background-color: transparent;
+}
+
+.sidebar-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.dropdown-menu {
+    min-width: 150px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* === Dashboard Cards === */
+.dashboard-card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-card .card-icon {
+    font-size: 4.5rem;
+    opacity: 0.2;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+}
+
+.dashboard-card:hover .card-icon {
+    opacity: 0.3;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.dashboard-card .card-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dashboard-card .card-text {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dashboard-card .card-footer {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-top: none;
+    text-align: center;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-card .card-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+.dashboard-card .card-footer a:hover {
+    color: #fff;
+}
+
+/* === Table Styles & Badges === */
+.table .badge {
+    font-size: 0.85em;
+    padding: 0.5em 0.75em;
+}
+
+.table .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -260px;
+    }
+    .sidebar.toggled {
+        margin-left: 0;
+    }
+    .content-wrapper {
+        width: 100%;
+    }
+}
