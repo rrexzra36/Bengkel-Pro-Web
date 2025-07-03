@@ -101,10 +101,10 @@ Anda bisa langsung login menggunakan akun admin yang sudah tersedia:
 ## 📁 Struktur Folder Proyek
 Struktur folder diatur agar rapi dan mudah dikelola.
 
-bengkel-pro/
-├── css/
+bengkel-pro/                     
+├── css/                         
 │   └── style.css                
-├── includes/
+├── includes/                    
 │   ├── auth_check.php           
 │   ├── footer.php               
 │   ├── header.php               
