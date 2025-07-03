@@ -103,25 +103,25 @@ Struktur folder diatur agar rapi dan mudah dikelola.
 
 bengkel-pro/
 ├── css/
-│   └── style.css           # Styling kustom
+│   └── style.css                
 ├── includes/
-│   ├── auth_check.php      # Pengecek sesi login
-│   ├── footer.php          # Bagian bawah template (JS)
-│   ├── header.php          # Bagian atas template (CSS)
-│   ├── koneksi.php         # Koneksi database
-│   ├── navbar.php          # Navigasi atas
-│   └── sidebar.php         # Menu navigasi samping
+│   ├── auth_check.php           
+│   ├── footer.php               
+│   ├── header.php               
+│   ├── koneksi.php              
+│   ├── navbar.php               
+│   └── sidebar.php              
 ├── js/
-│   └── script.js           # Logika JS (DataTables, SweetAlert, dll)
-├── login.php
-├── register.php
-├── logout.php
-├── profil.php
-├── index.php               # Halaman Dashboard
-├── pelanggan_data.php
-├── pelanggan_tambah.php
-├── pelanggan_edit.php
-├── pelanggan_hapus.php
-├── kendaraan_data.php
-├── ... (dan file CRUD lainnya)
-└── bengkel_db.sql          # File ekspor database
+│   └── script.js                
+├── login.php                    
+├── register.php                 
+├── logout.php                   
+├── profil.php                   
+├── index.php                    
+├── pelanggan_data.php           
+├── pelanggan_tambah.php         
+├── pelanggan_edit.php           
+├── pelanggan_hapus.php          
+├── kendaraan_data.php           
+├── ...                          
+└── bengkel_db.sql               
