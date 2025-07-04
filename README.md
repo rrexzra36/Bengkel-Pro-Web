@@ -4,19 +4,19 @@
 *<p align="center">Tampilan Halaman Dashboard</p>* -->
 
 ## 📝 Deskripsi Proyek
-**Bengkel Pro** adalah aplikasi web sederhana yang dirancang untuk membantu pemilik bengkel dalam mengelola data operasional sehari-hari. Aplikasi ini mencakup manajemen data pelanggan, kendaraan, riwayat servis, serta sistem otentikasi untuk admin dan staf. Proyek ini dibangun menggunakan PHP native dan MySQL dengan antarmuka yang modern dan responsif berkat Bootstrap 5.
+**Bengkel Pro** adalah aplikasi web sederhana yang dirancang untuk membantu pemilik bengkel dalam mengelola data operasional sehari-hari. Aplikasi ini mencakup manajemen data pelanggan, kendaraan, riwayat servis, serta sistem otentikasi untuk admin dan staf. Proyek ini dibangun menggunakan PHP native sebagai back-end, MySQL sebagai database, dan Bootstrap 5 sebagai front-end.
 
 ---
 
 ## ✨ Fitur Utama
 - **Login & Otentikasi**:
-  - Sistem login yang aman untuk pengguna (admin/staff).
-  - Halaman registrasi untuk pengguna baru (default sebagai staff).
-  - Halaman profil untuk mengubah nama dan kata sandi.
-  - Proteksi halaman (hanya bisa diakses setelah login).
+  - Sistem login yang aman untuk pengguna.
+  - Halaman registrasi untuk pengguna baru.
+  - Profil menu untuk mengubah nama dan kata sandi.
+  - Proteksi halaman (*required access*).
 
 - **Dashboard Informatif**:
-  - Menampilkan ringkasan data penting dalam bentuk kartu (card) yang menarik.
+  - Menampilkan ringkasan data.
   - Ringkasan mencakup total pelanggan, total kendaraan, jumlah servis yang sedang dikerjakan, dan jumlah servis yang telah selesai.
 
 - **Manajemen Data (CRUD)**:
@@ -26,11 +26,10 @@
 
 - **Antarmuka Pengguna Modern**:
   - Tampilan yang bersih, modern, dan sepenuhnya responsif.
-  - Tabel data canggih dengan fitur **pencarian, pengurutan, dan paginasi** menggunakan library **DataTables**.
-  - Notifikasi dan dialog konfirmasi yang elegan menggunakan **SweetAlert2**, menggantikan `alert()` bawaan browser.
-  - Navigasi yang mudah dengan sidebar dan navbar yang intuitif.
-  - Ikon yang informatif dari **Bootstrap Icons**.
-  - Fitur *toggle* untuk melihat/menyembunyikan kata sandi.
+  - Tabel data canggih dengan fitur **pencarian, pengurutan, dan pagination** menggunakan library **DataTables**.
+  - Notifikasi dan dialog konfirmasi yang elegan menggunakan **SweetAlert2**.
+  - Navigasi menggunakan *navbar* dan *sidebar*
+  - *Icon* menggunakan dari **Bootstrap Icons**.
 
 ---
 
@@ -45,16 +44,16 @@
   - **Bootstrap 5.3**: Untuk layout responsif dan komponen UI.
   - **jQuery**: Sebagai dependensi untuk DataTables.
   - **DataTables**: Untuk membuat tabel data yang interaktif.
-  - **SweetAlert2**: Untuk notifikasi dan dialog konfirmasi yang modern.
-  - **Bootstrap Icons**: Untuk ikonografi yang konsisten.
+  - **SweetAlert2**: Untuk notifikasi yang interaktif.
+  - **Bootstrap Icons**: Untuk *icon* yang konsisten.
 
 ---
 
 ## 🚀 Cara Instalasi dan Menjalankan Proyek
 
-Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
+Berikut merupakan cara menjalankan proyek ini di lingkungan lokal:
 
-1.  **Prasyarat**:
+1.  **Requirements**:
     - Pastikan sudah menginstal web server seperti **XAMPP** atau **WAMP**.
     - Nyalakan service **Apache** dan **MySQL** dari panel kontrol XAMPP.
 
@@ -100,7 +99,7 @@ Anda bisa langsung login menggunakan akun admin yang sudah tersedia:
 
 ## 📁 Struktur Folder Proyek
 Struktur folder diatur agar rapi dan mudah dikelola.
-
+```
 bengkel-pro/                     
 ├── css/                         
 │   └── style.css                
@@ -125,3 +124,4 @@ bengkel-pro/
 ├── kendaraan_data.php           
 ├── ...                          
 └── bengkel_db.sql               
+```
