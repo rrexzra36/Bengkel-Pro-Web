@@ -11,7 +11,6 @@ if (isset($_SESSION['user_id'])) {
 }
 
 $error = '';
-$success = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_lengkap = trim($_POST['nama_lengkap']);
@@ -47,7 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             mysqli_stmt_bind_param($stmt_insert, "ssss", $nama_lengkap, $username, $hashed_password, $role);
 
             if (mysqli_stmt_execute($stmt_insert)) {
-                $success = "Registrasi berhasil! Silakan <a href='login.php' class='alert-link'>login</a>.";
+                // Atur session untuk menampilkan SweetAlert
+                $_SESSION['registration_success'] = true;
+                header("Location: register.php");
+                exit();
             } else {
                 $error = "Terjadi kesalahan pada server. Gagal mendaftar.";
             }
@@ -69,6 +71,7 @@ $page_title = "Registrasi";
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="login-page-body">
@@ -87,13 +90,6 @@ $page_title = "Registrasi";
                             <div class="alert alert-danger d-flex align-items-center" role="alert">
                                 <i class="bi bi-exclamation-triangle-fill me-2"></i>
                                 <div><?php echo $error; ?></div>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <?php if (!empty($success)): ?>
-                            <div class="alert alert-success d-flex align-items-center" role="alert">
-                                <i class="bi bi-check-circle-fill me-2"></i>
-                                <div><?php echo $success; ?></div>
                             </div>
                         <?php endif; ?>
 
@@ -130,11 +126,12 @@ $page_title = "Registrasi";
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script>
         $(document).ready(function() {
+            // Script untuk toggle password visibility
             $(".toggle-password-icon").click(function() {
                 $(this).find("i").toggleClass("bi-eye bi-eye-slash");
-                // Cari input di parent .position-relative
                 var input = $(this).closest('.position-relative').find("input");
                 if (input.attr("type") === "password") {
                     input.attr("type", "text");
@@ -142,6 +139,27 @@ $page_title = "Registrasi";
                     input.attr("type", "password");
                 }
             });
+
+            <?php
+            // Cek session dan tampilkan SweetAlert jika ada
+            if (isset($_SESSION['registration_success']) && $_SESSION['registration_success']) {
+                echo "
+                Swal.fire({
+                    title: 'Registrasi Berhasil!',
+                    text: 'Akun Anda berhasil dibuat.',
+                    icon: 'success',
+                    confirmButtonText: 'Login',
+                    confirmButtonColor: '#0d6efd'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'login.php';
+                    }
+                });
+                ";
+                // Hapus session setelah alert ditampilkan
+                unset($_SESSION['registration_success']);
+            }
+            ?>
         });
     </script>
 </body>
