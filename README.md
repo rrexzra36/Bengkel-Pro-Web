@@ -93,7 +93,7 @@ Berikut merupakan cara menjalankan proyek ini di lingkungan lokal:
 ## 🔐 Akun Default
 Anda bisa langsung login menggunakan akun admin yang sudah tersedia:
 - **Username**: `ezra`
-- **Password**: `123`
+- **Password**: `123123`
 
 ---
 
